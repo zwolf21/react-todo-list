@@ -35,7 +35,11 @@ const initialState = List([
 export default handleActions(
   {
     [INSERT]: (state, action) => {
-      const todo = fromJS(action.payload);
+      const id = state.maxBy(hitter => hitter.get("id")).get("id") + 1;
+      const todo = fromJS({
+        id: id,
+        ...action.payload
+      });
       return state.push(todo);
     },
     [TOGGLE]: (state, action) => {

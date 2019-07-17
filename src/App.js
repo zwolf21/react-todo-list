@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 
 import PageTemplate from "./components/PageTemplate";
+import TodoInput from "./components/TodoInput";
 
 export class App extends Component {
   render() {
-    return <PageTemplate>리액트</PageTemplate>;
+    return (
+      <PageTemplate>
+        <TodoInput />
+      </PageTemplate>
+    );
   }
 }
 

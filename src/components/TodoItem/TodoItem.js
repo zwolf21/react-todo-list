@@ -11,7 +11,13 @@ const TodoItem = ({ done, children, onToggle, onRemove }) => {
     <div className={cx("todo-item")} onClick={onToggle}>
       <input type="checkbox" className={cx("tick")} checked={done} readOnly />
       <div className={cx("text", { done })}>{children}</div>
-      <div className={cx("delete")} onClick={onRemove}>
+      <div
+        className={cx("delete")}
+        onClick={e => {
+          onRemove();
+          e.stopPropagation();
+        }}
+      >
         [지우기]
       </div>
     </div>

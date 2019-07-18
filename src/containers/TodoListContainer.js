@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import TodoList from "../components/TodoList";
-import * as inputActions from "../modules/input";
 import * as todoActions from "../modules/todo";
 
 export class TodoListContainer extends Component {
@@ -28,11 +27,10 @@ export class TodoListContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  todos: state.todo.toJS()
+  todos: state.todo.todos
 });
 
 const mapDispatchToProps = dispatch => ({
-  InputActions: bindActionCreators(inputActions, dispatch),
   TodoActions: bindActionCreators(todoActions, dispatch)
 });
 

@@ -37,7 +37,7 @@ export class TodoInputContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  value: state.input.get("value")
+  value: state.input.value
 });
 
 const mapDispatchToProps = dispatch => ({
